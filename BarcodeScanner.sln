@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2817BDFE-01A3-4F50-82BC-973EB6442D88}"
 	ProjectSection(SolutionItems) = preProject
 		build_scripts\Build.ps1 = build_scripts\Build.ps1
+		Deploy.ps1 = Deploy.ps1
 	EndProjectSection
 EndProject
 Global
