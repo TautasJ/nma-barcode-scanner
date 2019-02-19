@@ -2,13 +2,13 @@ $ErrorActionPreference = "Stop"
 
 $serviceFolder = "C:\Services\Tucio"
 $serviceName = "TucioBarcodeScanner"
-$artifactsFolder = "package\*"
+$artifactsFolder = "package"
 
-If((Test-Path $artifactsFolder) -ne $true) {
-    New-Item $artifactsFolder      
-}
+Remove-Item $serviceFolder -Recurse -ErrorAction Ignore
+Copy-Item $artifactsFolder -Destination $serviceFolder -Recurse
 
-Copy-Item $artifactsFolder $serviceFolder
-New-Service -Name $serviceName -BinaryPathName "$serviceFolder\BarcodeScanner.dll"
+Stop-Service -Name $serviceName -ErrorAction Ignore
+Invoke-Expression "sc.exe delete $serviceName"
+New-Service -Name $serviceName -BinaryPathName "$serviceFolder\BarcodeScanner.exe"
 
 Start-Service -Name $serviceName
