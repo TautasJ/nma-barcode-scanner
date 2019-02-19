@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 
 $serviceFolder = "C:\Services\Tucio"
-$serviceName = "BenoBarcodeScanner"
+$serviceName = "TucioBarcodeScanner"
 $artifactsFolder = "package\*"
 
 If((Test-Path $artifactsFolder) -ne $true) {
