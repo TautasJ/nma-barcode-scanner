@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$serviceFolder = "C:\Services\Beno"
+$serviceFolder = "C:\Services\Tucio"
 $serviceName = "BenoBarcodeScanner"
 $artifactsFolder = "package\*"
 
